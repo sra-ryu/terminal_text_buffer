@@ -16,4 +16,18 @@ public class BufferLine {
         }
     }
 
+    public void setCell(int col, Cell cell) {
+        if (col >= 0 && col < width) {
+            cells[col] = cell;
+        }
+    }
+
+    public Cell getCell(int col) {
+        if (col >= 0 && col < width) {
+            return cells[col];
+        } else {
+            return null;
+        }
+    }
+
 }
