@@ -1,4 +1,7 @@
 package org.example.model;
 
-public class StyleFlag {
+public enum StyleFlag {
+    BOLD,
+    ITALIC,
+    UNDERLINE
 }
