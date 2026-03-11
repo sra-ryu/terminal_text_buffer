@@ -6,7 +6,7 @@ public class BufferLine {
     private final Cell[] cells;
     private final int width;
 
-    public BufferLine(Cell[] cells, int width) {
+    public BufferLine(int width) {
         this.width = width;
         this.cells = new Cell[width];
 
@@ -29,5 +29,4 @@ public class BufferLine {
             return null;
         }
     }
-
 }
