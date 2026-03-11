@@ -1,7 +1,6 @@
 package org.example;
 
-import org.example.model.BufferLine;
-import org.example.model.Cell;
+import org.example.model.*;
 
 import java.util.*;
 
@@ -14,6 +13,8 @@ public class TerminalBuffer {
 
     private final Deque<BufferLine> scrollback;
 
+    private CellAttributes currentAttributes;
+
     public TerminalBuffer(int width, int height, int scrollBackMaxSize) {
         this.width = width;
         this.height = height;
@@ -24,5 +25,9 @@ public class TerminalBuffer {
         for (int i = 0; i < height; i++) {
             screen.add(new BufferLine(width));
         }
+    }
+
+    public void updateAttiribute(TerminalColor fgColor, TerminalColor bgColor, Set<StyleFlag> styles) {
+        this.currentAttributes = new CellAttributes(fgColor, bgColor, styles);
     }
 }
